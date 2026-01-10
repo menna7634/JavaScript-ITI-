@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <form name="palindromeForm" onsubmit="return checkPalindrome(this)">
+        <h2 class="form-title">Palindrome Checker</h2>
+        
+        <label for="userString">Enter String:</label>
+        <input type="text" name="userString" id="userString" placeholder="e.g. RADAR" required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" name="caseSensitive" id="caseSensitive">
+            <label for="caseSensitive">Consider case sensitivity?</label>
+        </div>
+
+        <input type="submit" value="Check String">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.marble-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 20px;               
+    padding: 20px;         
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: max-content;      
+}
+
+.marble {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.marble.active-state {
+    transform: scale(1.25);
+}

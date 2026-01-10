@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+.gallery-container {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

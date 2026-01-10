@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+table {
+    transform: scale(1.5);
+    transform-origin: center;
+}
+
+.width {
+    width: 55px;
+}
+
+
+
+#td {
+    font-family: comic sans ms;
+    text-align: center;
+    color: white;
+    background-color: gray;
+    font-size: 9pt;
+}
+
+#ans {
+    width: 100px;
+    text-align: right;
+}
