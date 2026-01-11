@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Swap</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .values {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h3>Destructuring Swap</h3>
+        <div class="values" id="output">A = 5, B = 10</div>
+        <button onclick="swapValues()">Swap Values</button>
+    </div>
+
+    <script>
+        let a = 5;
+        let b = 10;
+
+        function swapValues() {
+            [a, b] = [b, a];
+            document.getElementById('output').innerText = `A = ${a}, B = ${b}`;
+        }
+    </script>
+
+</body>
+
+</html>

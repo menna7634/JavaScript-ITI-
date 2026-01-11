@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card" id="mainCard">
+        <div id="regView">
+            <h2>Register</h2>
+            <div id="timer-bar">
+                <div id="timer-fill"></div>
+            </div>
+            <form id="regForm">
+                <div class="form-group">
+                    <label for="titlePicker">Title</label>
+                    <select id="titlePicker" name="title" required>
+                        <option value="" disabled selected>Select Title</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Dr.">Dr.</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Full Name</label><input type="text" id="name" required
+                        placeholder="Enter Your Name"></div>
+                <div class="form-group"><label>Email</label><input type="email" id="email" required
+                        placeholder="Enter Your Email"></div>
+                <div class="form-group"><label>Mobile</label><input type="tel" id="mobile" required
+                       placeholder="01xxxxxxxxx" maxlength="11"></div>
+                <div class="form-group"><label>Address</label><input type="text" id="address" required
+                        placeholder="Enter Youy Address"></div>
+                <button type="submit">Complete Registration</button>
+            </form>
+        </div>
+
+      <div id="welcomeView" class="hidden">
+    <h2 id="greetHeader"></h2>
+    <div class="info-item"><b>Email:</b> <span id="dispEmail"></span></div>
+    <div class="info-item"><b>Mobile:</b> <span id="dispMobile"></span></div>
+    <div class="info-item"><b>Address:</b> <span id="dispAddress"></span></div>
+    
+    <button onclick="location.reload()" class="btn-secondary">Back</button>
+</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

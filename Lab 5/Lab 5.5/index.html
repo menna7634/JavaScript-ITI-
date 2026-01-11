@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min/Max Finder</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .result-box {
+            background: #f1f5f9;
+            padding: 15px;
+            border-left: 5px solid #3b82f6;
+            margin-top: 10px;
+        }
+
+        b {
+            color: #1e40af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Array Statistics</h2>
+    <div id="display" class="result-box"></div>
+
+    <script>
+        function getArrayStats(...numbers) {
+            const max = Math.max(...numbers);
+            const min = Math.min(...numbers);
+
+            return { max, min };
+        }
+
+        const myData = [45, 12, 89, 2, 67, 102, 34];
+        const stats = getArrayStats(...myData);
+
+        document.getElementById('display').innerHTML = `
+            <p><b>Original Array:</b> [${myData.join(', ')}]</p>
+            <p><b>Maximum Value:</b> ${stats.max}</p>
+            <p><b>Minimum Value:</b> ${stats.min}</p>
+        `;
+    </script>
+</body>
+
+</html>
