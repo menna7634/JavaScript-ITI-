@@ -6,7 +6,14 @@ function fetchWithTimeout(url, timeout = 5000) {
     )
   ]);
 }
-async function fetchWithRetry(url, retries = 3, timeout = 5000) {
+const defaultOptions = {
+  retries: 3,
+  timeout: 5000
+};
+
+async function fetchWithRetry(url,options = {}) {
+      const { retries, timeout } = { ...defaultOptions, ...options };
+
   for (let i = 1; i <= retries; i++) {
     try {
       const response = await fetchWithTimeout(url, timeout);
@@ -19,6 +26,7 @@ async function fetchWithRetry(url, retries = 3, timeout = 5000) {
     }
   }
 }
+
 const usersTabs = document.getElementById("usersTabs");
 const postsList = document.getElementById("postsList");
 const message = document.getElementById("message");
@@ -33,7 +41,6 @@ fetchWithTimeout("https://jsonplaceholder.typicode.com/users")
     message.textContent = error.message;
   });
 
-
 function createUserTabs(users) {
   users.forEach(user => {
     const tab = document.createElement("div");
@@ -42,21 +49,20 @@ function createUserTabs(users) {
     tab.onclick = () => loadUserPosts(user.id, tab);
     usersTabs.appendChild(tab);
   });
-}
+} 
+  let activeTab = null ;
 async function loadUserPosts(userId, selectedTab) {
   try {
     message.textContent = "Loading posts...";
     postsList.innerHTML = "";
-
-    document.querySelectorAll(".tab").forEach(tab =>
-      tab.classList.remove("active")
-    );
-    selectedTab.classList.add("active");
+if (activeTab&&activeTab !== selectedTab){
+              activeTab.classList.remove("active")
+}
+        selectedTab.classList.add("active");
+        activeTab=selectedTab;
 
     const posts = await fetchWithRetry(
-      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`,
-      3,
-      5000
+      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
     );
 
     displayPosts(posts);
