@@ -1,6 +1,6 @@
 const regForm = document.getElementById('regForm');
-const timerFill = document.getElementById('timer-fill');
-timerFill.style.transition = "30s linear";
+const timerFill = document.getElementById('timer-fill'); // shape that grow to 30 sec
+timerFill.style.transition = "30s linear"; // animate 30 sec in sconstant time 
 timerFill.style.width = "100%";
 
 const timeout = setTimeout(() => {
@@ -26,7 +26,7 @@ regForm.onsubmit = (e) => {
     const address = document.getElementById('address').value.trim();
 
 
-    const nameRegex = /^(?=.*[a-zA-Z])[a-zA-Z\s]+$/;
+    const nameRegex = /^([a-zA-Z])[a-zA-Z\s]+$/; // start with at least one char followed by charters or spaces
     const mobileRegex = /^01[012][0-9]{8}$/
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

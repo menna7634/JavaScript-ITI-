@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="card">
+        <h2>Shape Results</h2>
+        <div id="output"></div>
+    </div>
+    <script type="module">
+        import { Rectangle, Square, Circle, Shape } from './shapes.js';
+        const out = document.getElementById('output');
+
+        const r1 = new Rectangle(10, 5);
+        const r2 = new Rectangle(50, 50); 
+        const s1 = new Square(4);
+        const c1 = new Circle(7);
+
+        out.innerHTML += `<div class="res">${r1.toString()}</div>`;
+        out.innerHTML += `<div class="res">${s1.toString()}</div>`;
+        out.innerHTML += `<div class="res">${c1.toString()}</div>`;
+        out.innerHTML += `<p><strong>Total Shapes Created:</strong> ${Shape.getCount()}</p>`;
+    </script>
+</body>
+</html>
